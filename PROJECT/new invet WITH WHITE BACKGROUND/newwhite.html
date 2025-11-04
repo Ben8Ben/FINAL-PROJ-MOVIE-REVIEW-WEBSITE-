@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Glasses | Meta</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f6f6f6;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Fullscreen device-like frame */
+    .frame {
+        width: 99vw;
+        height: 99vh;
+        background: white;
+        border: 15px solid rgb(0, 0, 0);
+        border-radius: 40px;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Sidebar navigation built into left border */
+    .sidebar {
+        position: absolute;
+        top: none;
+        left: 0;
+        height: 100%;
+        width: 70px;
+        background: rgb(255, 252, 252);
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 0%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: width 0.4s ease;
+        z-index: 2;
+    }
+
+    /* Expand on hover */
+    .sidebar:hover {
+        width: 200px;
+    }
+
+    .nav-item {
+        position: relative;
+        color: rgb(0, 0, 0);
+        font-size: 0.9em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 50%;
+        text-align: left;
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item span {
+        opacity: 0;
+        margin-left: 15px;
+        transition: opacity 0.4s ease;
+        white-space: nowrap;
+    }
+
+    .sidebar:hover .nav-item span {
+        opacity: 1;
+    }
+
+    .nav-item:hover {
+        color: #ccc;
+    }
+
+    /* Main content */
+    .content {
+        flex: 1;
+        text-align: center;
+        padding: 80px 40px;
+        overflow-y: auto;
+        margin-left: 70px; /* space for sidebar */
+        transition: margin-left 0.4s ease;
+    }
+
+    .sidebar:hover ~ .content {
+        margin-left: 200px; /* adjust when sidebar expands */
+    }
+
+    .content img {
+        width: 50%;
+        max-width: 420px;
+        margin-bottom: 30px;
+    }
+
+    .content h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .content p {
+        color: #555;
+        font-size: 1em;
+        max-width: 500px;
+        margin: 0 auto 20px;
+    }
+
+    .content .link {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+    }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+    <!-- Sidebar navigation (connected to border) -->
+    <div class="sidebar">
+        <div class="nav-item">O <span>Home</span></div>
+        <div class="nav-item">O<span>About Us</span></div>
+        <div class="nav-item">O <span>Contact Us</span></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <img src="ben.jpg" alt="AI Glasses">
+        <h1>JOHN BENEDICK B BERNAL</h1>
+        <p>BSIT 1A</p>
+        <a>Welcome to my pages</a>
+    </div>
+
+</div>
+
+</body>
+</html>
